@@ -34,8 +34,9 @@ def sprite_rect(player):
 
 def play():
     kn.window.create("Cloud Trail | Grace Academy STEM", WIDTH * 2, HEIGHT * 2)
-    kn.renderer.set_virtual_resolution(WIDTH, HEIGHT)
+    # The virtual screen inherits the filter when it is created.
     kn.renderer.set_default_filter_mode(kn.FilterMode.NEAREST)
+    kn.renderer.set_virtual_resolution(WIDTH, HEIGHT)
     kn.time.set_target(60)
 
     course = kn.tilemap.Map(ASSETS / "course.tmx")
